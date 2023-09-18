@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Publisher extends Model
 {
     public function games():BelongsToMany{
-        return$this->belongsToMany('App\Model\Game', 'gamePublishers');
+        return$this->belongsToMany('App\Models\Game', 'gamePublishers');
     }
 }

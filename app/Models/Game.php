@@ -9,11 +9,11 @@ class Game extends Model
 {
     public function genres(): BelongsToMany
     {
-        return $this->belongsToMany('App\Model\Genre', 'gameGenres');
+        return $this->belongsToMany('App\Models\Genre', 'gameGenres');
     }
 
     public function publishers(): BelongsToMany
     {
-        return $this->belongsToMany('App\Model\Publisher', 'gamePublishers');
+        return $this->belongsToMany('App\Models\Publisher', 'gamePublishers');
     }
 }
