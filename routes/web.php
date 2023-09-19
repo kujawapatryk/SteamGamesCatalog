@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Game\GameController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,10 +13,22 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
+
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+    'prefix' => 'games',
+    'namespace' => 'Game',
+    'as' => 'games.'
+], function () {
+//    Route::get('dashboard', 'GameController@dashboard')
+//        ->name('dashboard');
+
+    Route::get('', [GameController::class, 'index'])
+        ->name('list');
+
+    Route::get('{game}', [GameController::class, 'show'])
+        ->name('show');
 });
 
 Route::get('/dashboard', function () {
