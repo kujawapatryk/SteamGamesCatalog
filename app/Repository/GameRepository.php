@@ -47,6 +47,5 @@ class GameRepository implements GameRepositoryInterface{
             'min' => $this->gameModel->min('metacritic_score'),
         ];
 
-        // TODO: Implement stats() method.
     }
 }
