@@ -27,9 +27,13 @@ Route::group([
     Route::get('', [GameController::class, 'index'])
         ->name('list');
 
-    Route::get('{game}', [GameController::class, 'show'])
+    Route::get('{game}', [GameController::class, 'showDetails'])
         ->name('show');
+
+
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

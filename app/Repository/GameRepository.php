@@ -28,4 +28,11 @@ class GameRepository implements GameRepositoryInterface{
         }
         return $query->paginate($limit);
     }
+
+    public function showDetails(int $id){
+
+        return $this->gameModel
+            ->where('id', $id)
+            ->first();
+    }
 }

@@ -12,4 +12,6 @@ interface GameRepositoryInterface
     public const LIMIT = 15;
 
     public function filterBy(?string $phrase, string $type = self::TYPE_DEFAULT, int $size = self::LIMIT);
+
+    public function showDetails(int $id);
 }

@@ -34,4 +34,11 @@ class GameController extends Controller{
             'type' => $type,
         ]);
     }
+
+    public function showDetails($game): View{
+
+        return view('game.show',[
+            'game' => $this->gameRepository->showDetails((int) $game),
+        ]);
+    }
 }
