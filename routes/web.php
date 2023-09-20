@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 
 */
+Route::get('', [GameController::class, 'dashboard'])
+        ->name('games.dashboard');
 
 Route::group([
     'prefix' => 'games',
     'namespace' => 'Game',
     'as' => 'games.'
 ], function () {
-//    Route::get('dashboard', 'GameController@dashboard')
-//        ->name('dashboard');
 
     Route::get('', [GameController::class, 'index'])
         ->name('list');
