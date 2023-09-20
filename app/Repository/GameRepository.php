@@ -35,4 +35,18 @@ class GameRepository implements GameRepositoryInterface{
             ->where('id', $id)
             ->first();
     }
+
+    public function stats()
+    {
+
+        return [
+            'count' => $this->gameModel->count(),
+            'countScoreGtSeventy' => $this->gameModel->where('metacritic_score', '>=', 70)->count(),
+            'avg' => round($this->gameModel->avg('metacritic_score'), 2),
+            'max' => $this->gameModel->max('metacritic_score'),
+            'min' => $this->gameModel->min('metacritic_score'),
+        ];
+
+        // TODO: Implement stats() method.
+    }
 }

@@ -41,4 +41,12 @@ class GameController extends Controller{
             'game' => $this->gameRepository->showDetails((int) $game),
         ]);
     }
+
+    public function dashboard(): View{
+
+
+        return \view('game.dashboard',[
+            'stats' => $this->gameRepository->stats(),
+        ]);
+    }
 }
