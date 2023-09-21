@@ -33,6 +33,27 @@ Route::group([
 
 });
 
+Route::group([
+    'prefix' => 'user',
+    'namespace' => 'User',
+    'as' => 'user.'
+], function () {
+//    Route::get('profile', 'UserController@profile')
+//        ->name('profile');
+//
+//    Route::get('edit', 'UserController@edit')
+//        ->name('edit');
+//
+//    Route::post('update', 'UserController@update')
+//        ->name('update');
+
+    // listing, dodanie gry, usunięcie gry, ocena
+    Route::get('games', [GameController::class, 'list'])->name('games.list');
+    Route::post('games', [GameController::class, 'add'])->name('games.add');
+    Route::delete('games', [GameController::class, 'remove'])->name('games.remove');
+    Route::post('games/rete', [GameController::class, 'rate'])->name('games.rate');
+});
+
 
 
 Route::get('/dashboard', function () {
