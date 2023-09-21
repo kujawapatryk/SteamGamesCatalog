@@ -36,7 +36,7 @@ class GameRepository implements GameRepositoryInterface{
             ->first();
     }
 
-    public function stats()
+    public function stats(): array
     {
 
         return [
@@ -48,4 +48,24 @@ class GameRepository implements GameRepositoryInterface{
         ];
 
     }
+
+    public function best()
+    {
+        return $this->gameModel
+            ->with('genres')
+            ->best()
+            ->get();
+
+    }
+
+    public function scoreStats()
+    {
+        return $this->gameModel->select(
+            $this->gameModel->raw('count(*) as count'), 'metacritic_score'
+        )
+            ->having('metacritic_score', '>=', 70)
+            ->groupBy('metacritic_score')
+            ->orderBy('metacritic_score', 'desc')
+            ->get();
+        }
 }

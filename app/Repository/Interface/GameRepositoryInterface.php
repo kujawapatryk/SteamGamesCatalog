@@ -16,4 +16,6 @@ interface GameRepositoryInterface
     public function showDetails(int $id);
     public function stats();
 
+    public function best();
+    public function scoreStats();
 }
