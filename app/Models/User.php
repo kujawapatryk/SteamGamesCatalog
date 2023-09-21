@@ -3,7 +3,9 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Game;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -44,4 +46,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function games(): BelongsToMany
+    {
+        return $this->belongsToMany(Game::class, 'userGames')
+            ->withPivot('rate')
+            ->with('genres');
+    }
+
+    public function hasGame(int $gameId): bool{
+        return (boolean) $this->games()->where('userGames.game_id', $gameId)->first();
+    }
 }

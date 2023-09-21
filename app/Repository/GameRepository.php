@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
-use App\Repository\Interface\GameRepositoryInterface;
+
 use App\Models\Game;
+use App\Repository\Interface\GameRepositoryInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
-class GameRepository implements GameRepositoryInterface{
+class GameRepository implements GameRepositoryInterface {
     private Game $gameModel;
     public function __construct(Game $gameModel){
         $this->gameModel = $gameModel;

@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Game;
 use App\Http\Controllers\Controller;
 use App\Repository\Interface\GameRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class GameController extends Controller{
@@ -35,10 +36,18 @@ class GameController extends Controller{
         ]);
     }
 
-    public function showDetails($game): View{
+    public function showDetails(int $game): View{
+
+        $user = Auth::user();
+        $userHasGame = false;
+
+        if ($user) {
+            $userHasGame = $user->hasGame($game);
+        }
 
         return view('game.show',[
             'game' => $this->gameRepository->showDetails((int) $game),
+            'userHasGame' => $userHasGame,
         ]);
     }
 
