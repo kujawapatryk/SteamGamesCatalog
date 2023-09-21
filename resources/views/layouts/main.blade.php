@@ -8,6 +8,7 @@
     <meta name="description" content=""/>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div style="max-width: 1280px; margin: 0 auto;" >
