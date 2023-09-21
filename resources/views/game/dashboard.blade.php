@@ -43,7 +43,7 @@
                     <tbody>
                     @foreach($scoreStats ?? [] as $statRow)
                         <tr>
-                            <td class="border p-2">{{ $statRow->score }}</td>
+                            <td class="border p-2">{{ $statRow->metacritic_score }}</td>
                             <td class="border p-2">{{ $statRow->count }}</td>
                         </tr>
                     @endforeach
@@ -74,8 +74,8 @@
                         <tr>
                             <td class="border p-2">{{ $loop->iteration }}</td>
                             <td class="border p-2">{{ $game->name }}</td>
-                            <td class="border p-2">{{ $game->score }}</td>
-                            <td class="border p-2">{{ $game->steamId }}</td>
+                            <td class="border p-2">{{ $game->metacritic_score }}</td>
+                            <td class="border p-2">{{ $game->steam_appid }}</td>
                             <td class="border p-2">{{ $game->genres->implode('name', ', ') }}</td>
                             <td class="border p-2">
                                 <a href="{{ route('games.show', ['game' => $game->id]) }}" class="text-blue-500 hover:underline">Szczegóły</a>
