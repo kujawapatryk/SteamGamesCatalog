@@ -18,8 +18,7 @@
 
 <!-- Linki w sekcji "Gry" -->
 <nav class="space-y-2">
-    sssssssss
-    {{--    <a href="{{ route('games.dashboard') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Dashboard</a>--}}
+    <a href="{{ route('games.dashboard') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Dashboard</a>
     <a href="{{ route('games.list') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Katalog</a>
 </nav>
 
@@ -29,7 +28,6 @@
 
     <!-- Linki w sekcji "Admin panel" -->
     <nav class="space-y-2">
-        ssssssssssssssssssssss
         {{--        <a href="{{ route('get.users') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Użytkownicy</a>--}}
     </nav>
 @endcan
