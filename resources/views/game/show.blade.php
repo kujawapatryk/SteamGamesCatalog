@@ -12,7 +12,9 @@
                         @csrf
                         <div class="form-row">
                             <input type="hidden" name="gameId" value="{{ $game->id }}">
-                            <button type="submit" class="btn btn-primary mb-2">Usuń z listy</button>
+                            <button type="submit" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline-grey active:bg-gray-800">
+                                Usuń z listy
+                            </button>
                         </div>
                     </form>
                 @else
@@ -24,7 +26,7 @@
 {{--                        </div>--}}
                         <div class="flex items-center space-x-4">
                             <input type="hidden" name="gameId" value="{{ $game->id }}">
-                            <button type="submit" class="bg-gray-500 hover:bg-gray-600  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700">
+                            <button type="submit" class="bg-gray-500 hover:bg-gray-600  text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline-grey active:bg-gray-800">
                                 Dodaj do mojej listy
                             </button>
                         </div>
@@ -55,7 +57,7 @@
                 <div class="mx-2">{!! $game->about !!}</div>
             </div>
 
-            <a href="{{ route('games.list') }}" class="mt-16 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-gray active:bg-gray-400">
+            <a href="{{ route('games.list') }}" class="mt-16 bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-5 rounded focus:outline-none focus:shadow-outline-gray active:bg-gray-800">
                 Lista gier
             </a>
         </div>
