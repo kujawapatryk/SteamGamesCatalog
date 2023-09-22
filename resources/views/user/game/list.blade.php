@@ -36,7 +36,7 @@
                         <td class="py-2 px-4 border-b">{{ $game->name }}</td>
                         <td class="py-2 px-4 border-b">{{ $game->genres->implode('name', ', ') }}</td>
                         <td class="py-2 px-4 border-b">
-                            {{ $game->score ?? 'brak' }}
+                            {{ $game->metacritic_score ?? 'brak' }}
                         </td>
                         <td class="py-2 px-4 border-b">
                             <form class="m-0 flex items-start" method="post" action="{{ route('user.games.rate') }}">

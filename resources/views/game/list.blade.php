@@ -59,7 +59,7 @@
                             <td class="px-4 py-2">{{ $game->id }}</td>
                             <td class="px-4 py-2">{{ $game->name }}</td>
                             <td class="px-4 py-2">{{ $game->type}}</td>
-                            <td class="px-4 py-2">{{ $game->score ?? 'brak' }}</td>
+                            <td class="px-4 py-2">{{ $game->metacritic_score ?? 'brak' }}</td>
                             <td class="px-4 py-2">{{ $game->genres->implode('name', ', ') }}</td>
                             <td class="px-4 py-2">
                                 <a href="{{ route('games.show', ['game' => $game->id]) }}" class="text-blue-500 hover:underline">Szczegóły</a>
