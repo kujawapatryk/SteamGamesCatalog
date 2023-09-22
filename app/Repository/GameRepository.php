@@ -15,6 +15,9 @@ class GameRepository implements GameRepositoryInterface {
         $this->gameModel = $gameModel;
     }
 
+    public function get(int $id){
+        return $this->gameModel->find($id);
+    }
     public function filterBy(?string $phrase, string $type = self::TYPE_DEFAULT, int $limit = self::LIMIT) : LengthAwarePaginator
     {
         $query = $this->gameModel
