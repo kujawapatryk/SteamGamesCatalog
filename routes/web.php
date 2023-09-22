@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Game\GameController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\UserGameController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,10 +49,10 @@ Route::group([
 //        ->name('update');
 
     // listing, dodanie gry, usunięcie gry, ocena
-    Route::get('games', [GameController::class, 'list'])->name('games.list');
-    Route::post('games', [GameController::class, 'add'])->name('games.add');
-    Route::delete('games', [GameController::class, 'remove'])->name('games.remove');
-    Route::post('games/rete', [GameController::class, 'rate'])->name('games.rate');
+    Route::get('games', [UserGameController::class, 'list'])->name('games.list');
+    Route::post('games', [UserGameController::class, 'add'])->name('games.add');
+    Route::delete('games', [UserGameController::class, 'remove'])->name('games.remove');
+    Route::post('games/rete', [UserGameController::class, 'rate'])->name('games.rate');
 });
 
 
