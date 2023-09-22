@@ -26,7 +26,9 @@
                     <option @if ($type == 'series') selected @endif value="series">Serie</option>
                     <option @if ($type == 'video') selected @endif value="video">Video</option>
                 </select>
-                <button type="submit" class="btn btn-primary mb-1 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Wyszukaj</button>
+                <button type="submit" class=" bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-5 rounded focus:outline-none focus:shadow-outline-gray active:bg-gray-800">
+                    Wyszukaj
+                </button>
             </form>
 
             <div class="overflow-x-auto mt-4">
