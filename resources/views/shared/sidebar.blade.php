@@ -10,7 +10,7 @@
     <!-- Linki w sekcji "Konto" -->
     <nav class="space-y-2">
         {{--    <a href="{{ route('me.profile') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Profil</a>--}}
-        {{--    <a href="{{ route('me.games.list') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Gry</a>--}}
+            <a href="{{ route('user.games.list') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Gry</a>
     </nav>
 
     <!-- Nagłówek "Gry" -->
