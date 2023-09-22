@@ -23,7 +23,7 @@ class RemoveGameFromUserList extends FormRequest
     public function rules(): array
     {
         return [
-            `gameId` => 'required|integer',
+            'gameId' => 'required|integer',
         ];
     }
 }
