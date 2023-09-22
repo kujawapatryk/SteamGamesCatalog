@@ -68,4 +68,8 @@ class User extends Authenticatable
             $this->games()->detach($game->id);
         }
     }
+
+    public function rateGame(Game $game, int $rate): void{
+        $this->games()->updateExistingPivot($game, ['rate' => $rate]);
+    }
 }
