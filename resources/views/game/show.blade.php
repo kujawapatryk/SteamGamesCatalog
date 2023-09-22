@@ -10,7 +10,7 @@
                     <form class="float-right m-0" method="post" action="{{ route('user.games.remove') }}">
                         @method('delete')
                         @csrf
-                        <div class="form-row">
+                        <div class="flex items-center space-x-4">
                             <input type="hidden" name="gameId" value="{{ $game->id }}">
                             <button type="submit" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline-grey active:bg-gray-800">
                                 Usuń z listy
@@ -20,10 +20,6 @@
                 @else
                     <form class="float-right m-0" method="post" action="{{ route('user.games.add') }}">
                         @csrf
-{{--                        <div class="form-row">--}}
-{{--                            <input type="hidden" name="gameId" value="{{ $game->id }}">--}}
-{{--                            <button type="submit" class="btn btn-primary mb-2">Dodaj do mojej listy</button>--}}
-{{--                        </div>--}}
                         <div class="flex items-center space-x-4">
                             <input type="hidden" name="gameId" value="{{ $game->id }}">
                             <button type="submit" class="bg-gray-500 hover:bg-gray-600  text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline-grey active:bg-gray-800">
