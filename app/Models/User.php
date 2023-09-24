@@ -55,21 +55,8 @@ class User extends Authenticatable
             ->with('genres');
     }
 
-    public function hasGame(int $gameId): bool{
-        return (boolean) $this->games()->where('userGames.game_id', $gameId)->first();
+    public function isAdmin(): bool{
+        return (bool) $this->admin;
     }
 
-    public function addGame(Game $game): void{
-        $this->games()->save($game);
-    }
-
-    public function removeGame(Game $game): void{
-        if (isset($game->id)) {
-            $this->games()->detach($game->id);
-        }
-    }
-
-    public function rateGame(Game $game, int $rate): void{
-        $this->games()->updateExistingPivot($game, ['rate' => $rate]);
-    }
 }
