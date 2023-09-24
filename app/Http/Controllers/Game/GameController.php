@@ -53,9 +53,6 @@ class GameController extends Controller{
 
     public function dashboard(): View{
 
-        $test = $this->gameRepository->best();
-    dump($test);
-
         return view('game.dashboard',[
             'stats' => $this->gameRepository->stats(),
             'bestGames' => $this->gameRepository->best(),
