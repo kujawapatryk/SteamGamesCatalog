@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Game\GameController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserGameController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 */
 Route::get('', [GameController::class, 'dashboard'])
-        ->name('games.dashboard');
+        ->name('dashboard');
 
 Route::group([
     'prefix' => 'games',
@@ -34,11 +35,21 @@ Route::group([
 
 });
 
-Route::group([
-    'prefix' => 'user',
-    'namespace' => 'User',
-    'as' => 'user.'
-], function () {
+Route::middleware(['auth'])->group(function() {
+
+    Route::middleware(['can:isAdmin'])->group(function () {
+        Route::get('users', [UserController::class, 'list'])
+            ->name('user.list');
+
+        Route::get('users/{userId}', [UserController::class, 'show'])
+            ->name('user.show');
+    });
+
+    Route::group([
+        'prefix' => 'user',
+        'namespace' => 'User',
+        'as' => 'user.'
+    ], function () {
 //    Route::get('profile', 'UserController@profile')
 //        ->name('profile');
 //
@@ -48,18 +59,20 @@ Route::group([
 //    Route::post('update', 'UserController@update')
 //        ->name('update');
 
-    // listing, dodanie gry, usunięcie gry, ocena
-    Route::get('games', [UserGameController::class, 'list'])->name('games.list');
-    Route::post('games', [UserGameController::class, 'add'])->name('games.add');
-    Route::delete('games', [UserGameController::class, 'remove'])->name('games.remove');
-    Route::post('games/rete', [UserGameController::class, 'rate'])->name('games.rate');
+        // listing, dodanie gry, usunięcie gry, ocena
+        Route::get('games', [UserGameController::class, 'list'])->name('games.list');
+        Route::post('games', [UserGameController::class, 'add'])->name('games.add');
+        Route::delete('games', [UserGameController::class, 'remove'])->name('games.remove');
+        Route::post('games/rete', [UserGameController::class, 'rate'])->name('games.rate');
+    });
+
 });
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
