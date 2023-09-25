@@ -5,7 +5,6 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Repository\Interface\UserRepositoryInterface;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class UserController extends Controller{
@@ -18,7 +17,6 @@ class UserController extends Controller{
 
     public function list():View{
 
-//        Gate::authorize('admin-level');
         return view('user.list',[
             'users' => $this->userRepository->all(),
         ]);
@@ -26,9 +24,9 @@ class UserController extends Controller{
 
     public function show(int $userId):View{
 
-//        Gate::authorize('admin-level');
         return view('user.show',[
             'user' => $this->userRepository->get($userId),
             ]);
     }
+
 }
