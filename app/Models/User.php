@@ -59,4 +59,8 @@ class User extends Authenticatable
         return (bool) $this->admin;
     }
 
+    public function hasGame(int $gameId): bool{
+        return (boolean) $this->games()->where('userGames.game_id', $gameId)->first();
+    }
+
 }
