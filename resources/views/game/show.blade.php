@@ -12,19 +12,16 @@
                         @csrf
                         <div class="flex items-center space-x-4">
                             <input type="hidden" name="gameId" value="{{ $game->id }}">
-                            <button type="submit" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline-grey active:bg-gray-800">
-                                Usuń z listy
-                            </button>
-                        </div>
+                            <x-btn label="Usuń z listy"></x-btn>
+                  </div>
                     </form>
                 @else
                     <form class="float-right m-0" method="post" action="{{ route('user.games.add') }}">
                         @csrf
                         <div class="flex items-center space-x-4">
                             <input type="hidden" name="gameId" value="{{ $game->id }}">
-                            <button type="submit" class="bg-gray-500 hover:bg-gray-600  text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline-grey active:bg-gray-800">
-                                Dodaj do mojej listy
-                            </button>
+                            <x-btn label="Dodaj do mojej listy"></x-btn>
+
                         </div>
                     </form>
                 @endif
@@ -53,9 +50,8 @@
                 <div class="mx-2">{!! $game->about !!}</div>
             </div>
 
-            <a href="{{ route('games.list') }}" class="mt-16 bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-5 rounded focus:outline-none focus:shadow-outline-gray active:bg-gray-800">
-                Lista gier
-            </a>
+            <x-btn label="Lista gier" isLink="true" url="{{ route('games.list') }}"></x-btn>
+
         </div>
     @else
         <h5 class="card-header">Brak danych do wyświetlenia</h5>

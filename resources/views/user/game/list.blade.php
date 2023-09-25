@@ -51,7 +51,7 @@
                                     min="1"
                                     value="{{ $game->pivot->rate }}"
                                 />
-                                <button type="submit" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline-grey active:bg-gray-800">Oceń</button>
+                               <x-btn label="Oceń"></x-btn>
                             </form>
                         </td>
                         <td class="py-2 px-4 border-b">
