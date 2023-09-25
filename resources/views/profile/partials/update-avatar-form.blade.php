@@ -16,14 +16,21 @@
 
         <form action="{{ route('avatar.update') }}" method="post" enctype="multipart/form-data" class="space-y-4">
             @csrf
-            <!-- X-XSRF-TOKEN -->
-            <div class="flex justify-center">
-                @if($user->avatar)
-                    <img src="{{ Storage::url($user->avatar) }}" class="rounded-full max-w-38 max-h-38">
-                @else
-                    <img src="/images/avatar.png" class="rounded-full max-w-38 max-h-38">
-                @endif
+            <div>
+                <div class="flex justify-center cursor-pointer" onclick="triggerFileInput()">
+                    @if($user->avatar)
+                        <img src="{{ Storage::url($user->avatar) }}" class="rounded-full max-w-38 max-h-38">
+                    @else
+                        <img src="/images/avatar.png" class="rounded-full max-w-38 max-h-38">
+                    @endif
+                </div>
             </div>
+
+            <script>
+                function triggerFileInput() {
+                    document.getElementById('avatar').click();
+                }
+            </script>
 
             <div>
                 <label for="avatar" class="block text-sm font-medium text-gray-700">Wybierz avatar ...</label>
@@ -39,8 +46,7 @@
             </div>
 
             <div>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Zapisz dane</button>
-
+                <x-btn label="Zapisz"></x-btn>
             </div>
         </form>
     </div>
