@@ -1,17 +1,21 @@
-<div class="text-white font-bold "><!-- Link do Panelu -->
-    <a href="{{ route('dashboard') }}" class="flex items-center p-2 hover:bg-gray-600 rounded transition duration-150 ease-in-out">
+<div class="text-white font-bold ">
+    <!-- Link do Panelu -->
+    <x-navigate-button router="{{ route('dashboard') }}">
         <span class="mr-2 text-xl"><i class="fas fa-home"></i></span>
         Panel
-    </a>
-
+    </x-navigate-button>
 
     <!-- Nagłówek "Gry" -->
     <div class="text-gray-500 uppercase tracking-wide font-bold mt-4 mb-2">Gry</div>
 
     <!-- Linki w sekcji "Gry" -->
     <nav class="space-y-2 text-gray-100 font-bold" >
-        <a href="{{ route('dashboard') }}" class="block p-2 hover:bg-gray-600 rounded transition duration-150 ease-in-out">Dashboard</a>
-        <a href="{{ route('games.list') }}" class="block p-2 hover:bg-gray-600 rounded transition duration-150 ease-in-out">Katalog</a>
+        <x-navigate-button router="{{ route('dashboard') }}">
+            Dashboard
+        </x-navigate-button>
+        <x-navigate-button router="{{ route('games.list') }}">
+            Katalog
+        </x-navigate-button>
     </nav>
     @auth
     <!-- Nagłówek "Konto" -->
@@ -19,8 +23,12 @@
 
     <!-- Linki w sekcji "Konto" -->
     <nav class="space-y-2">
-        <a href="{{ route('profile.edit') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Profil</a>
-        <a href="{{ route('user.games.list') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Gry</a>
+        <x-navigate-button router="{{ route('profile.edit') }}">
+            Profil
+        </x-navigate-button>
+        <x-navigate-button router="{{ route('user.games.list') }}">
+            Gry
+        </x-navigate-button>
     </nav>
 
 
@@ -30,7 +38,9 @@
 
         <!-- Linki w sekcji "Admin panel" -->
         <nav class="space-y-2">
-                    <a href="{{ route('user.list') }}" class="block p-2 hover:bg-gray-200 rounded transition duration-150 ease-in-out">Użytkownicy</a>
+            <x-navigate-button router="{{ route('user.list') }}">
+                Użytkownicy
+            </x-navigate-button>
         </nav>
     @endcan
     @endauth
