@@ -32,12 +32,11 @@ Route::group([
     Route::get('{game}', [GameController::class, 'showDetails'])
         ->name('show');
 
-
 });
 
 Route::middleware(['auth'])->group(function() {
 
-    Route::middleware(['can:isAdmin'])->group(function () {
+    Route::middleware(['can:admin-level'])->group(function () {
         Route::get('users', [UserController::class, 'list'])
             ->name('user.list');
 
@@ -50,14 +49,6 @@ Route::middleware(['auth'])->group(function() {
         'namespace' => 'User',
         'as' => 'user.'
     ], function () {
-//    Route::get('profile', 'UserController@profile')
-//        ->name('profile');
-//
-//    Route::get('edit', 'UserController@edit')
-//        ->name('edit');
-//
-//    Route::post('update', 'UserController@update')
-//        ->name('update');
 
         // listing, dodanie gry, usunięcie gry, ocena
         Route::get('games', [UserGameController::class, 'list'])->name('games.list');
@@ -68,13 +59,8 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
-
-
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
+    Route::post('profile/update', [ProfileController::class, 'avatar'])->name('avatar.update');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
