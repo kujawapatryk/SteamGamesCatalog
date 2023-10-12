@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Repository\Eloquent;
 
 use App\Models\User;
 use App\Repository\Interface\UserRepositoryInterface;
@@ -17,11 +17,11 @@ class UserRepository implements UserRepositoryInterface {
 
     public function all(): Collection
     {
-        return $this->user->get();
+        return $this->user->select('id', 'name', 'email')->get();
     }
 
     public function get(int $id): User
     {
-       return $this->user->find($id);
+       return $this->user->select('id', 'name', 'email')->find($id);
     }
 }

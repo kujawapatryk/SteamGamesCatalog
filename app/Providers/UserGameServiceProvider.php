@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
-
 use App\Repository\Interface\UserGameRepositoryInterface;
-use App\Repository\UserGameRepository;
 use Illuminate\Support\ServiceProvider;
+
+use App\Repository\Eloquent\UserGameRepository;
+//use App\Repository\QueryBuilder\UserGameRepository;
 
 class UserGameServiceProvider extends ServiceProvider
 {

@@ -11,7 +11,7 @@
     <!-- Linki w sekcji "Gry" -->
     <nav class="space-y-2 text-gray-100 font-bold" >
         <x-navigate-button router="{{ route('dashboard') }}">
-            Dashboard
+            Panel
         </x-navigate-button>
         <x-navigate-button router="{{ route('games.list') }}">
             Katalog
