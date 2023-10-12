@@ -28,11 +28,11 @@
                 @foreach($users as $user)
                     <tr>
                         <td class="py-2 px-4 border-b border-gray-300 text-sm">{{ $loop->iteration }}</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-sm">{{ $user['id'] }}</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-sm">{{ $user['name'] }}</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-sm">{{ $user->id }}</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-sm">{{ $user->name }}</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-sm">
 
-                                <a href="{{ route('user.show', ['userId' => $user['id']]) }}" class="text-blue-500 hover:underline">Szczegóły</a>
+                                <a href="{{ route('user.show', ['userId' => $user->id]) }}" class="text-blue-500 hover:underline">Szczegóły</a>
 
                         </td>
                     </tr>
