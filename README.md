@@ -1,35 +1,39 @@
 # SteamCatalogGames
 
-## Opis projektu
-SteamCatalogGames to serwis prezentujący gry z platformy Steam, korzystający z oficjalnego API STEAM. Użytkownicy mają możliwość przeglądania gier, oceniania ich, dodawania do ulubionych, wyszukiwania po nazwie oraz filtrowania według kategorii. Dodatkowo, użytkownicy mogą tworzyć konta z własnymi avatarami.
+## Project Description
+SteamCatalogGames is a service showcasing games from the Steam platform, utilizing the official STEAM API. Users can browse games, rate them, add them to favorites, search by name, and filter by category. Additionally, users can create accounts with their own avatars.
 
-[Link do wersji live](TUTAJ_WPISZ_LINK)
+[Link to the live version](INSERT_YOUR_LINK_HERE)
 
-## Funkcjonalności
-- Przeglądanie gier dostępnych na platformie Steam
-- Ocenianie gier
-- Dodawanie gier do ulubionych
-- Wyszukiwanie gier po nazwie
-- Filtrowanie gier według kategorii
-- Tworzenie konta użytkownika z avatarem
+## Features
+- Browsing games available on the Steam platform
+- Rating games
+- Adding games to favorites
+- Searching games by name
+- Filtering games by category
+- Creating a user account with an avatar
 
-## Dane testowe
-- **Użytkownik**:
-  - Login: [login_uzytkownika]
-  - Hasło: [haslo_uzytkownika]
+## Test Data
+- **User**:
+  - Login: [user_login]
+  - Password: [user_password]
   
 - **Admin**:
-  - Login: [login_admina]
-  - Hasło: [haslo_admina]
+  - Login: [admin_login]
+  - Password: [admin_password]
 
-## Technologie
+## Technologies
 - PHP Laravel
 - MySQL MariaDB
 - Blade templates
 
-## Instalacja
-1. Sklonuj repozytorium na swój lokalny komputer.
-2. Zainstaluj zależności za pomocą komendy `composer install`.
-3. Skonfiguruj połączenie z bazą danych w pliku `.env`.
-4. Uruchom migracje bazy danych za pomocą komendy `php artisan migrate`.
-5. Uruchom serwer deweloperski za pomocą komendy `php artisan serve`.
+## Installation
+1. Clone the repository to your local computer.
+2. Install dependencies using the `composer install` command.
+3. Configure the database connection in the `.env` file.
+4. Run the database migrations using the `php artisan migrate` command.
+5. Start the development server using the `php artisan serve` command.
+
+---
+
+The idea and database structure come from a course led by Tomasz Tomczyk.
