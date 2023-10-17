@@ -3,7 +3,7 @@
 ## Project Description
 SteamCatalogGames is a service showcasing games from the Steam platform, utilizing the official STEAM API. Users can browse games, rate them, add them to favorites, search by name, and filter by category. Additionally, users can create accounts with their own avatars.
 
-[Link to the live version](INSERT_YOUR_LINK_HERE)
+<!--[Link to the live version](INSERT_YOUR_LINK_HERE) 
 
 ## Features
 - Browsing games available on the Steam platform
@@ -12,7 +12,7 @@ SteamCatalogGames is a service showcasing games from the Steam platform, utilizi
 - Searching games by name
 - Filtering games by category
 - Creating a user account with an avatar
-
+<!--
 ## Test Data
 - **User**:
   - Login: [user_login]
@@ -21,7 +21,7 @@ SteamCatalogGames is a service showcasing games from the Steam platform, utilizi
 - **Admin**:
   - Login: [admin_login]
   - Password: [admin_password]
-
+-->
 ## Technologies
 - PHP Laravel
 - MySQL MariaDB
