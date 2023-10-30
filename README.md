@@ -3,6 +3,8 @@
 ## Project Description
 SteamCatalogGames is a service showcasing games from the Steam platform, utilizing the official STEAM API. Users can browse games, rate them, add them to favorites, search by name, and filter by category. Additionally, users can create accounts with their own avatars.
 
+![SteamCatalogGames Preview](https://github.com/kujawapatryk/kujawapatryk/blob/main/steamcatalog.gif "SteamCatalogGames Preview")
+
 <!--[Link to the live version](INSERT_YOUR_LINK_HERE) 
 
 ## Features
