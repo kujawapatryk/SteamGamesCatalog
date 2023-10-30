@@ -5,8 +5,8 @@ namespace App\Providers;
 use App\Repository\Interface\GameRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
-//use App\Repository\Eloquent\GameRepository;
-use App\Repository\QueryBuilder\GameRepository;
+use App\Repository\Eloquent\GameRepository;
+//use App\Repository\QueryBuilder\GameRepository;
 
 class GameServiceProvider extends ServiceProvider
 {
